@@ -1,0 +1,9 @@
+{
+  "class":"The class of the developer is determined from his experience, rating, type of employment.",
+  "rating":"Developer rating is determined by its activity, the number of successful orders and time.",
+  "employment":"If the developer has a hired status, this means that he is an official employee of our company, and not a freelancer.",
+  "direction":"Direction shows all developer workspaces.",
+  "experience":"Experience shows the maximum number of years of work in a particular field.",
+  "team-list":"List of teams the developer is a member of.",
+  "avatar-scale-description":"You can scale with it."
+}

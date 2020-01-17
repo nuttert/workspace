@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16.71 19.18">
+  <defs>
+    <style>
+      .a6b5a6ba-0ab3-4678-b2aa-fe33806160d8 {
+        font-size: 17.64px;
+        fill: #fff;
+        font-family: MyriadPro-Regular, Myriad Pro;
+      }
+
+      .b296a776-2df7-45fa-b882-9f9e570f257b {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+    </style>
+  </defs>
+  <title>questions</title>
+  <g id="a8ef5cd3-65ac-4766-8471-47458674ddfb" data-name="Слой 2">
+    <g id="b01c3e7c-c191-4f75-940f-6e7c623617fc" data-name="Слой 5">
+      <g>
+        <text class="a6b5a6ba-0ab3-4678-b2aa-fe33806160d8" transform="translate(4.79 14.77)">?</text>
+        <circle class="b296a776-2df7-45fa-b882-9f9e570f257b" cx="8.35" cy="8.8" r="7.85"/>
+      </g>
+    </g>
+  </g>
+</svg>

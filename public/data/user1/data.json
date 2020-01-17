@@ -1,0 +1,65 @@
+{
+    "name": "Gregory",
+    "secondName": "Hayes",
+    "backgroundImage": "/data/user1/img/background.jpg",
+    "fraction":"backend",
+    "avatar": {
+        "src":"/data/user1/img/avatar2.jpg",
+        "top":"50%",
+        "right":"50%"
+    },
+    "contacts":{
+        "worksAt":"Google",
+        "location": "U.S.A. Los Angeles",
+        "feedbacks": [
+        {
+            "name": "vk",
+            "ref": "vk.com"
+        },
+        {
+            "name": "facebook",
+            "ref": "vk.com"
+        },
+        {
+            "name": "skype",
+            "ref": "vk.com"
+        },
+        {
+            "name": "tweeter",
+            "ref": "vk.com"
+        },
+        {
+            "name": "youtube",
+            "ref": "vk.com"
+        },
+        {
+            "name": "insta",
+            "ref": "vk.com"
+        }
+    ]
+    },
+    "status": "online",
+    "abilities": {
+        "evaluate": {
+            "class": { "value": "premium"},
+            "employment": { "value": "yes" },
+            "rating": { "value": "+1250" }
+        },
+        "notAvaluate": {
+            "direction": [{ "value": "design" },
+                { "value": "web-development" }
+            ],
+            "experience": [{ "value": "5 years" }],
+            "team-list": [{ "value": "my team" }]
+        }
+    },
+    "portfolio": 
+        { 
+          "src1": "data/user1/img/portfolio3.png",
+          "src2": "data/user1/img/portfolio4.png",
+          "likes": 20,
+          "views":500 }
+    
+
+
+}
