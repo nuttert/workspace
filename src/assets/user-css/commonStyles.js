@@ -62,8 +62,8 @@ const pointStyle ={
 }
 
 const hrStyle = {
-  width: '10%',
-  height: 1,
+  width: 40,
+  height: 4,
   borderRadius: 3,
   marginLeft: 0,
 }

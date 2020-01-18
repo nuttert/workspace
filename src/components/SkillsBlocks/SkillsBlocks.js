@@ -45,7 +45,8 @@ export default function SkillsBlocks(props){
           return (
           <GridItem 
           key={key}
-          className={classes.offsetFromTop+" "+classes.skillsWrap+" "+classes.block }>
+          style={{padding:0}}
+          className={classes.offsetFromTop+" "+classes.skillsWrap+" "+classes.block}>
             <data.card  
             uniqueValue={key} 
             expanded={expanded} 

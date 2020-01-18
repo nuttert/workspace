@@ -10,14 +10,13 @@ const appStyle = theme => ({
     height: "100vh"
   },
   mainPanel: {
-    overflow: "auto",
     position: "relative",
     float: "right",
     maxHeight: "100%",
-    width: "100%",
     overflowScrolling: "touch",
-    [theme.breakpoints.up("md")]: {
-      width: `calc(100% - ${drawerWidth}px)`
+    width: `calc(100% - ${60}px)`,
+    [theme.breakpoints.down("sm")]: {
+      width: "100%"
     },
   },
   content: {

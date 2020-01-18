@@ -136,7 +136,8 @@ const complitedTasksCardStyle = theme => ({
 const skillsCardStyle = theme =>({
     card: {
       background: darkPerpleColor,
-      flexDirection:"column"
+      flexDirection:"column",
+      boxShadow:"none"
     },
     title:{
       color:whiteColor,
@@ -152,6 +153,9 @@ const skillsCardStyle = theme =>({
     titleWrap: {
       justifyContent:"center",
       alignItems:"center",
+      background:"transparent",
+      border:"none",
+      padding:"2px",
     },
     icon:{
       color:whiteColor
@@ -159,11 +163,15 @@ const skillsCardStyle = theme =>({
     panelDetails:{
       overflowY:"scroll",
       height:"85px",
+      padding:0,
+      paddingLeft:10,
+      paddingRight:10,
     },
     hr:{
       ...hrStyle,
       background: aquaColor,
-      borderColor:aquaColor
+      borderColor:aquaColor,
+      marginLeft:5
     },
     skillValue:{
         display:"block",
@@ -177,7 +185,7 @@ const skillsCardStyle = theme =>({
         ...transition,
         cursor:"default",
         "&:hover,&:focus":{
-          transform:"scale(1.2)"
+          background:aquaColor
       },
     }
 })

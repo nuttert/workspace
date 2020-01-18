@@ -25,6 +25,7 @@ export default function Sidebar(props) {
     return window.location.href.indexOf(routeName) > -1 ? true : false;
   }
   const {color, logo, logoText, routes } = props;
+  
   var links = (
     <List className={classes.list}>
       {routes.map((prop, key) => {

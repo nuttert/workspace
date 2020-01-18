@@ -43,6 +43,7 @@ export default function Profile(props) {
 
   return (
     isReady ?
+    <>
       <div style={{ marginTop: "5%", position: "relative" }} className={classes.root}>
         <GridContainer
           direction="column" justify="center" alignItems="center" xs={12}>
@@ -62,8 +63,10 @@ export default function Profile(props) {
         </GridContainer>
 
         <SkillsBlocks fraction={fraction} workspaceAbilities={workspaceAbilities} skills={skills} />
-        <Portfolio />
+        
       </div>
+      <Portfolio />
+      </>
       :
       <Progress className={classes.progress} progress={progress} />
 

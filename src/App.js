@@ -5,6 +5,7 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 
 import Sidebar from './components/Sidebar/Sidebar';
+import NavigationUpBar from './components/NavigationUpBar/NavigationUpBar';
 
 import BackgroundImage from 'containers/BackgroundImage';
 
@@ -53,8 +54,8 @@ function App({...rest }) {
   });
   return (
     <div className="App">
-    <Sidebar
-    routes={routes}
+  <NavigationUpBar 
+  routes={routes}
     logoText={"Workspace"}
     // handleDrawerToggle={handleDrawerToggle}
     // open={mobileOpen}

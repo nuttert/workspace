@@ -1,35 +1,46 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Editor from 'containers/Editor/Editor'
 
 const useStyles = makeStyles(theme => ({
   root: {
-    '& .MuiTextField-root': {
       margin: theme.spacing(1),
+      position:"relative",
       width: "80%",
-      background: "white"
+      height: "auto",
+      background: "white",
+      color:"black",
+      margin:"auto",
+      marginTop:"10%"
     },
-  },
 }));
 
-export default function MultilineTextFields() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState('Controlled');
 
-  const handleChange = event => {
-    setValue(event.target.value);
-  };
+
+export default function Portfolio() {
+  const classes = useStyles();
+
+
 
   return (
-    <form className={classes.root} noValidate autoComplete="off" >
-      <div>
-        <TextField
-          label="Multiline Placeholder"
-          placeholder="Placeholder"
-          multiline
-          onChange={handleChange}
-        />
-       </div>
-    </form>
-    );
+    <div className={classes.root}> <Editor />
+    </div>);
   }
+
+
+
+// class MyEditor extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {editorState: EditorState.createEmpty()};
+//     this.onChange = editorState => this.setState({editorState});
+//   }
+//   render() {
+//     return (
+      
+//     );
+//   }
+// }
+
+
