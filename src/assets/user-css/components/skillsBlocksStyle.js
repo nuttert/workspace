@@ -6,40 +6,6 @@ import {
 import { aquaColor } from '../commonStyles';
 
 const skillsBlocksStyle = theme => ({
-  "@keyframes point-blinker-1":{
-    "0%" :{ opacity: 1.0,fill:aquaColor },
-    "50%" :{ opacity: 1.0,fill:pink  },
-    "100%" :{ opacity: 1.0,fill:aquaColor},
-  },
-  "@-webkit-keyframes point-blinker-1":{
-    "0%" :{ opacity: 1.0,fill:aquaColor },
-    "50%" :{ opacity: 1.0,fill:pink  },
-    "100%" :{ opacity: 1.0,fill:aquaColor},
-  },
-  "@keyframes point-blinker-2":{
-    "0%" :{ opacity: 1.0,fill:pink },
-    "50%" :{ opacity: 1.0,fill:aquaColor  },
-    "100%" :{ opacity: 1.0,fill:pink},
-  },
-  "@-webkit-keyframes point-blinker-2":{
-    "0%" :{ opacity: 1.0,fill:pink },
-    "50%" :{ opacity: 1.0,fill:aquaColor  },
-    "100%" :{ opacity: 1.0,fill:pink},
-  },
-  "@keyframes point-blinker-3":{
-    "0%" :{ opacity: 0.0 },
-    "25%" :{ opacity: 0.5 },
-    "50%" :{ opacity: 1.0 },
-    "75%" :{ opacity: 0.5 },
-    "100%" :{ opacity: 0.0 },
-  },
-  "@-webkit-keyframes point-blinker-3":{
-    "0%" :{ opacity: 0.0 },
-    "25%" :{ opacity: 0.5 },
-    "50%" :{ opacity: 1.0 },
-    "75%" :{ opacity: 0.5 },
-    "100%" :{ opacity: 0.0 },
-  },
   root: {
     flexGrow: 1,
   },
@@ -56,35 +22,30 @@ const skillsBlocksStyle = theme => ({
     borderRadius:"5px",
     background:darkPerpleColor
   },
+  offsetFromTop:{
+    marginTop:"20px"
+  },
 
   img: {
     position:"relative",
     width:"80%",
     maxWidth: '80%',
   },
-  emblemImg:{
-    marginTop:"20%",
-    marginLeft:"-40%",
-    "& #__back_point_1":{
-      fill:pink,
-      WebkitAnimation: "$point-blinker-1 4s linear infinite",
-      animation: "$point-blinker-1 4s linear infinite",
-    },
-    "& #__back_point_2":{
-      fill:pink,
-      WebkitAnimation: "$point-blinker-2 4s linear infinite",
-      animation: "$point-blinker-2 4s linear infinite",
-    },
-    "& #__back_point_3":{
-      fill:pink,
-      WebkitAnimation: "$point-blinker-1 4s linear infinite",
-      animation: "$point-blinker-1 4s linear infinite",
-    }
-  },
   emblemContainer:{
     border:"1px solid",
-    borderColor:pink
+    borderColor:aquaColor
   },
+
+  skillsWrap:{
+    [theme.breakpoints.down('sm')]: {
+      padding:2,
+    },
+  },
+  emblemContainer:{
+    position:"relative",
+    border:"1px solid",
+    borderColor:aquaColor
+  }
 
 });
 

@@ -9,7 +9,8 @@ import classNames from "classnames";
 const styles = {
   grid: {
     margin: "0 15px",
-    width: "unset"
+    width: "unset",
+    overflow:"hidden"
   }
 };
 

@@ -5,16 +5,19 @@ const AvatarStyle = {
     "& img": {
       width: "100%",
       height: "auto",
-      position:"relative"
-    }
+      position:"relative",
+    },
   },
   avatarProfile: {
     maxWidth: "130px",
     maxHeight: "130px",
     margin: "0 auto 0",
     borderRadius: "50%",
-    WebkitBorderRadius: "50%",
-    MozBorderRadius: "50%",
+    WebkitBorderRadius: '50%',
+    MozBorderRadius: '50%',
+    WebkitAppearance: 'none',
+    clipPath: 'circle(50% at center)',
+
     overflow: "hidden",
     background:"black",
     padding: "0",

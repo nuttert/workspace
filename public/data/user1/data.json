@@ -8,6 +8,19 @@
         "top":"50%",
         "right":"50%"
     },
+    "workspaceAbilities":{
+        "rating":"1,250",
+        "employment":"yes",
+        "averageOrder":"2,100 $",
+        "classification":"premium",
+        "complitedTasks":{
+            "value":"1,000","increasing":"10%","relative":"previous month"}
+    },
+    "skills":{
+        "languages":["python","c++"],
+        "databases":["SQL","Mongo"],
+        "libsAndFrameworks":["Boost","Boost.Asio","Boost","Boost.Asio","Boost","Boost.Asio","Boost","Boost.Asio"]
+    },
     "contacts":{
         "worksAt":"Google",
         "location": "U.S.A. Los Angeles",
@@ -39,20 +52,6 @@
     ]
     },
     "status": "online",
-    "abilities": {
-        "evaluate": {
-            "class": { "value": "premium"},
-            "employment": { "value": "yes" },
-            "rating": { "value": "+1250" }
-        },
-        "notAvaluate": {
-            "direction": [{ "value": "design" },
-                { "value": "web-development" }
-            ],
-            "experience": [{ "value": "5 years" }],
-            "team-list": [{ "value": "my team" }]
-        }
-    },
     "portfolio": 
         { 
           "src1": "data/user1/img/portfolio3.png",

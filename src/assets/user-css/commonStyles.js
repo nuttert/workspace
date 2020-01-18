@@ -6,6 +6,7 @@ const greenColor = "#35FF73";
 const darkPerpleColor = "#171840";
 const pink = "#e61871";
 const greyColor = "#888888";
+const greenAquaColor = "#1ff3b6";
 
 const defaultFont = {
   fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
@@ -60,19 +61,20 @@ const pointStyle ={
   borderRadius:"50%",
 }
 
+const hrStyle = {
+  width: '10%',
+  height: 1,
+  borderRadius: 3,
+  marginLeft: 0,
+}
+
 const sm ="600px";
 const md ="960px";
 const lg ="1280";
 const xl ="1920";
 
 
-const theme ={
-  typography: {
-    subtitle2: {
-      fontSize: 10,
-    },
-}
-};
+
 
 export 
 {
@@ -84,13 +86,15 @@ export
   darkPerpleColor,
   pink,
   greyColor,
-  
+  greenAquaColor,
+
   defaultFont,
   styledFont,
   transition,
   drawerWidth,
   hexToRgb,
   border,
+
   pointStyle,
-  theme
+  hrStyle
 };

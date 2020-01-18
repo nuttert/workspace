@@ -5,7 +5,9 @@ import { makeStyles } from "@material-ui/core/styles";
 
 import GridItem from "components/Grid/GridItem";
 import GridContainer from "components/Grid/GridContainer";
+
 import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 
 import styles from "assets/user-css/components/contactsBoxStyle";
 import { ReactComponent as LocationIcon } from "assets/img/location.svg";
@@ -40,41 +42,45 @@ export default function ContactsBox(props) {
     [classes.box]: true,
   });
 
-    const locationBlock = (value, info) => {
-      if (typeof value != 'string') { console.warn(`location value is not string ${value}`); return }
-      return (
-        <GridContainer
-          item
-          direction="row"
-          >
-          <GridItem>
-            <info.icon className={classes.svgImg} alt={info.title} />
-            <a className={classes.itemText}>{info.title}</a>
-          </GridItem>
-          <GridItem style={{ padding: 0 }}>
-            <a className={classes.itemText}>{value}</a>
-          </GridItem>
+  const locationBlock = (value, info) => {
+    if (typeof value != 'string') { console.warn(`location value is not string ${value}`); return }
+    return (
+      <GridContainer
+        item
+        direction="row"
+      >
+        <GridContainer item justify="center" alignItems="center">
+          <info.icon className={classes.svgImg} alt={info.title} />
+          <Typography className={classes.itemText} component="subtitle2" variant="subtitle2" noWrap>
+            {info.title}
+          </Typography>
         </GridContainer>
-      )
-    };
+        <GridContainer item style={{ padding: 0 }}>
+          <Typography className={classes.itemText} component="subtitle2" variant="subtitle2" noWrap>
+            {value}
+          </Typography>
+        </GridContainer>
+      </GridContainer>
+    )
+  };
 
-    const feedbackBlock = (value) => {
-      if (typeof value != 'object') { console.warn(`feedbacks value is not array ${value}`); return }
-      return (
-        value.map(({ name, ref }) => {
-          const currentFeedback = feedbacks[name];
-          if (!currentFeedback) { console.error(`Can't find feedbacks ${name}`); return }
-          return (
-            <GridItem style={{ padding: "8px" }} xs={2}>
-              <a href={ref}><currentFeedback.icon className={classes.svgImgFeedback} alt={name} /></a>
-            </GridItem>);
-        })
-      )
-    };
+  const feedbackBlock = (value) => {
+    if (typeof value != 'object') { console.warn(`feedbacks value is not array ${value}`); return }
+    return (
+      value.map(({ name, ref }) => {
+        const currentFeedback = feedbacks[name];
+        if (!currentFeedback) { console.error(`Can't find feedbacks ${name}`); return }
+        return (
+          <GridItem xs={2}>
+            <a href={ref}><currentFeedback.icon className={classes.svgImgFeedback} alt={name} /></a>
+          </GridItem>);
+      })
+    )
+  };
 
 
   return (
-    <div className={contactsBoxClasses} {...rest}>
+    <GridContainer sm={12} md={6} className={contactsBoxClasses} {...rest}>
       <GridContainer
         direction="column"
         alignItems="flex-start"
@@ -85,7 +91,7 @@ export default function ContactsBox(props) {
           Object.entries(locationBlockInfo).map(([key, info]) => {
             const value = contacts[key];
             if (!value) return;
-            return ( 
+            return (
               locationBlock(value, info)
             );
           })
@@ -95,7 +101,9 @@ export default function ContactsBox(props) {
       <GridContainer
         direction="row"
         alignItems="center"
-        justify="center">
+        justify="center"
+        spacing={2}
+        >
         {
           contacts &&
           feedbacksBlockInfo &&
@@ -103,7 +111,7 @@ export default function ContactsBox(props) {
             const value = contacts[key];
             if (!value) return;
             return (
-             feedbackBlock(value)
+              feedbackBlock(value)
             );
 
           })
@@ -111,15 +119,15 @@ export default function ContactsBox(props) {
       </GridContainer>
 
       <GridContainer
-      direction="row"
-      alignItems="center"
-      justify="center"
-      spacing={2}>
-      <GridItem xs={6}><Button  fullWidth={true} className={classes.messageButton}>Message</Button></GridItem>
-      <GridItem xs={6}><Button  fullWidth={true} className={classes.phoneButton}>Phone</Button></GridItem>
-    </GridContainer>
+        direction="row"
+        alignItems="center"
+        justify="center"
+        spacing={2}>
+        <GridItem xs={6}><Button fullWidth={true} className={classes.messageButton}>Message</Button></GridItem>
+        <GridItem xs={6}><Button fullWidth={true} className={classes.phoneButton}>Phone</Button></GridItem>
+      </GridContainer>
 
-    </div>
+    </GridContainer>
   );
 }
 

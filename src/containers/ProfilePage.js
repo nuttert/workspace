@@ -15,7 +15,8 @@ export default connect(
       secondName:  data.secondName,
       feedbacks: data.feedbacks,
       contacts: data.contacts,
-      abilities: data.abilities,
+      workspaceAbilities: data.workspaceAbilities,
+      skills: data.skills,
       status: data.status,
       fraction: data.fraction,
       descriptions

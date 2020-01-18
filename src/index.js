@@ -8,18 +8,16 @@ import { Provider } from 'react-redux';
 import store from './store'
 
 import profileActions from 'redux/actions/profileActions';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import {
-  theme
-} from 'assets/user-css/commonStyles'
+import { ThemeProvider } from '@material-ui/core/styles';
+import theme from './theme';
 
-const muiTheme = createMuiTheme(theme);
+
 
 store.dispatch(profileActions.fetchUserData());
 store.dispatch(profileActions.fetchProfileDescriptions());
 
 ReactDOM.render(
-  <ThemeProvider theme={muiTheme}>
+  <ThemeProvider theme={theme}>
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
