@@ -19,7 +19,7 @@
     "skills":{
         "languages":["python","c++"],
         "databases":["SQL","Mongo"],
-        "libsAndFrameworks":["Boost","Boost.Asio","Boost","Boost.Asio","Boost","Boost.Asio","Boost","Boost.Asio"]
+        "libsAndFrameworks":["Boost","Boost.Asio","Fastcgi Container","SFML","cpprestsdk"]
     },
     "contacts":{
         "worksAt":"Google",

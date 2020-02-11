@@ -4,6 +4,8 @@ import FormatAlignRightIcon from '@material-ui/icons/FormatAlignRight';
 import FormatBoldIcon from '@material-ui/icons/FormatBold';
 import FormatItalicIcon from '@material-ui/icons/FormatItalic';
 import FormatUnderlinedIcon from '@material-ui/icons/FormatUnderlined';
+import IconLink from '@material-ui/icons/Link';
+
 import Divider from '@material-ui/core/Divider';
 import {  
   ALIGN_LEFT,
@@ -20,6 +22,8 @@ const tooltipElements = [
   {icon:FormatBoldIcon,style:'BOLD'},
   {icon:FormatItalicIcon,style: 'ITALIC'},
   {icon:FormatUnderlinedIcon,style: HIGHLIGHT},
+  {divider:Divider},
+  {icon:IconLink,style: 'LINK',link:true},
 ]
 
 export default tooltipElements;

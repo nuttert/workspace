@@ -9,12 +9,16 @@ import Status from "components/Status/Status";
 import Progress from 'components/Progress/Progress';
 import SkillsBlocks from 'components/SkillsBlocks/SkillsBlocks';
 import { styledFont, whiteColor } from 'assets/user-css/commonStyles';
-import Portfolio from "components/Portfolio/Portfolio";
+
 import { makeStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    marginLeft:"60px",marginTop: "5%", position: "relative",
+    [theme.breakpoints.down('sm')]:{
+      marginLeft:"0"
+    }
   },
   paper: {
     padding: theme.spacing(2),
@@ -26,7 +30,8 @@ const styles = theme => ({
     padding: 0,
     margin: 0,
     marginTop: "10px",
-  }
+  },
+
 });
 
 
@@ -44,7 +49,7 @@ export default function Profile(props) {
   return (
     isReady ?
     <>
-      <div style={{ marginTop: "5%", position: "relative" }} className={classes.root}>
+      <div  className={classes.root}>
         <GridContainer
           direction="column" justify="center" alignItems="center" xs={12}>
           <GridItem xs={12} sm={12} md={6}>
@@ -65,7 +70,6 @@ export default function Profile(props) {
         <SkillsBlocks fraction={fraction} workspaceAbilities={workspaceAbilities} skills={skills} />
         
       </div>
-      <Portfolio />
       </>
       :
       <Progress className={classes.progress} progress={progress} />

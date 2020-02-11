@@ -2,9 +2,9 @@ import {drawerWidth } from 'assets/user-css/commonStyles';
 
 const backgroundImageStyle = theme => ({
     backgroundImage:{
-    position: "absolute",
+    position: "fixed",
     backgroundSize: "cover",
-    height:"120%",
+    height:"120vh",
     bottom:0,
     left:0,
     margin:"auto",

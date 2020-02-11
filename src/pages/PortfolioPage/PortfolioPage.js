@@ -5,14 +5,13 @@ import Editor from 'containers/Editor/Editor'
 
 const useStyles = makeStyles(theme => ({
   root: {
-      margin: theme.spacing(1),
-      position:"relative",
-      width: "80%",
-      height: "auto",
+      position:"absolute",
+      top:0,
+      width: "100%",
+      minHeight: "100vh",
       background: "white",
       color:"black",
-      margin:"auto",
-      marginTop:"10%"
+      margin:"0",
     },
 }));
 

@@ -137,7 +137,7 @@ const skillsCardStyle = theme =>({
     card: {
       background: darkPerpleColor,
       flexDirection:"column",
-      boxShadow:"none"
+      boxShadow:"none",
     },
     title:{
       color:whiteColor,

@@ -39,7 +39,7 @@ function EmblemCard(props) {
   const classes = useStylesEmblemCard();
   const { emblem,fraction,...rest} = props;
   return (
-      <emblem.get className={classes.media+ " "+classes.emblemAnimation }/>
+      <emblem.get className={classes.media }/>
   );
 };
 function WorkspaceAbilitiesCard(props) {

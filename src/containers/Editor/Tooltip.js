@@ -15,18 +15,18 @@ const useStyles = makeStyles(styles);
 
 
 
-export default ({ editorState, onToggleSpan,onToggleBlock, position }) => {
+const OpenTooltip = ({ editorState, onToggleSpan,onToggleBlock, position,setLink }) => {
   const currentStyle = editorState.getCurrentInlineStyle();
   const currentType = RichUtils.getCurrentBlockType(editorState);
   const classes = useStyles();
-
+  
   const chooseStyle = (style,type)=>e=> {
     e.preventDefault();
     onToggleSpan(style);
     onToggleBlock(type);
   };
 
-  if(!position) return <></>;
+  if(!position || currentType == "SLIDER") return <></>;
   return (
     <div className={classes.element}>
     <Tooltip
@@ -41,10 +41,11 @@ export default ({ editorState, onToggleSpan,onToggleBlock, position }) => {
         const elementClasses =  classNames(classes.icon,
                                           classes.element,
                                         {[classes.selectedElement]:isSelected})
+        const handler = element.link ?  setLink:chooseStyle(element.style,element.type);
         return (element.icon ?
  
         <element.icon className={elementClasses} 
-        onMouseDown={chooseStyle(element.style,element.type)}
+        onMouseDown={handler}
         />:
         <element.divider orientation="vertical" />)
       })}
@@ -59,3 +60,22 @@ export default ({ editorState, onToggleSpan,onToggleBlock, position }) => {
     </div>
   );
 };
+
+
+export default class WrapperOpenTooltip extends React.Component{
+  constructor(props) {
+    super(props);
+    this.state = {
+      show:false,
+      position: null
+    };
+  }
+  
+  render(){
+    const {...rest} = this.props;
+    return (
+    this.state.show ? 
+    <OpenTooltip position={this.state.position} {...rest} />:
+    null);
+  }
+}

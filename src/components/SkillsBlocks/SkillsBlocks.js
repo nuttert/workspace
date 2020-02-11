@@ -46,7 +46,7 @@ export default function SkillsBlocks(props){
           <GridItem 
           key={key}
           style={{padding:0}}
-          className={classes.offsetFromTop+" "+classes.skillsWrap+" "+classes.block}>
+          className={classes.offsetFromTop+" "+classes.skillsWrap+" "+classes.block+" "+classes.skillsBlock}>
             <data.card  
             uniqueValue={key} 
             expanded={expanded} 
@@ -128,10 +128,13 @@ export default function SkillsBlocks(props){
         <GridContainer  
  
         lg={3} xs={12} md={12}
-        direction="column"  item  spacing={0} 
+        direction="column"  item  spacing={2} 
         // justify="space-between"
         className={classes.block}
-        style={{background:"transparent",padding:0}}>
+        style={{
+        background:"transparent",
+        paddingTop:0,paddingBottom:0,
+        }}>
           <Skills />
         </GridContainer>
       </GridContainer>

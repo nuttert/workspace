@@ -14,7 +14,7 @@ const appStyle = theme => ({
     float: "right",
     maxHeight: "100%",
     overflowScrolling: "touch",
-    width: `calc(100% - ${60}px)`,
+    width: "100%",
     [theme.breakpoints.down("sm")]: {
       width: "100%"
     },

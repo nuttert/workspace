@@ -8,6 +8,15 @@ import {
   hexToRgb,
   drawerWidth
 } from 'assets/user-css/commonStyles'
+
+const font = 
+      {fontFamily: 'SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif',
+        fontWeight: "300",
+        lineHeight: "1.5em"}
+
+
+
+
 const navigationUpBarStyle = theme => ({
 
 
@@ -41,7 +50,7 @@ const navigationUpBarStyle = theme => ({
     ...defaultFont
   },
   itemIcon: {
-    width: "15px",
+    width: "20px",
     height: "auto",
     fontSize: "24px",
     lineHeight: "30px",
@@ -52,12 +61,12 @@ const navigationUpBarStyle = theme => ({
     color: "rgba(" + hexToRgb(whiteColor) + ", 0.8)"
   },
   itemText: {
-    ...defaultFont,
     margin: "0",
     lineHeight: "30px",
-    fontSize: "10px",
+    fontSize: "11px",
     color: whiteColor,
-    textDecoration: "none"
+    textDecoration: "none",
+    fontFamily:'SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif'
   },
   logo: {
     position: "relative",
@@ -74,7 +83,6 @@ const navigationUpBarStyle = theme => ({
     }
   },
   logoLink: {
-    ...defaultFont,
     textTransform: "uppercase",
     padding: "5px 0",
     display: "block",
@@ -134,6 +142,10 @@ const navigationUpBarStyle = theme => ({
     },
   },
   search: {
+    transition: theme.transitions.create('margin', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
     position: 'relative',
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(blackColor, 0.85),
@@ -214,7 +226,7 @@ const navigationUpBarStyle = theme => ({
   },
   drawerOpen: {
     width: drawerWidth,
-    background: blackColor,
+    background: fade(blackColor,0.85),
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -229,14 +241,13 @@ const navigationUpBarStyle = theme => ({
     overflowX: 'hidden',
     width: theme.spacing(7) + 1,
     [theme.breakpoints.up('sm')]: {
-      width: theme.spacing(9) + 1,
+      width: theme.spacing(10) + 1,
     },
     [theme.breakpoints.down('sm')]: {
       width: 0
     },
   },
   toolbar: {
-    background: blackColor,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',

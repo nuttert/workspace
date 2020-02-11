@@ -45,6 +45,10 @@ const skillsBlocksStyle = theme => ({
     position:"relative",
     border:"1px solid",
     borderColor:aquaColor
+  },
+  skillsBlock:{
+    border:"1px solid",
+    borderColor:aquaColor
   }
 
 });

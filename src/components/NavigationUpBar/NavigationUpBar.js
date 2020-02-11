@@ -14,24 +14,41 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import MailIcon from '@material-ui/icons/Mail';
+
+
 import styles from "assets/user-css/components/navigationUpBarStyle";
 import classNames from "classnames";
 import PropTypes from "prop-types";
-import {whiteColor} from "assets/user-css/commonStyles";
 
-import InputBase from '@material-ui/core/InputBase';
-import Badge from '@material-ui/core/Badge';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import NotificationsIcon from '@material-ui/icons/Notifications';
+
+import routes from '../../routes';
+
 import MoreIcon from '@material-ui/icons/MoreVert';
 import { NavLink } from "react-router-dom";
-const drawerWidth = 240;
+import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 
 
 const useStyles = makeStyles(styles);
+
+const switchRoutes = (classes,handle)=>(
+  <Switch>
+    {routes.map((prop, key) => {
+      if (prop.layout === "/user") {
+        const upBarElements = prop.upBarElements;
+        if(!upBarElements) return null;
+        return (
+          <Route
+            exact path={prop.layout + prop.path}
+            component={upBarElements(classes,handle)}
+            key={key}
+          />
+        );
+      }
+      return null;
+    })}
+  </Switch>
+);
 
 
 export default function NavigationUpBar(props) {
@@ -41,7 +58,7 @@ export default function NavigationUpBar(props) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-
+  const {setMainPanelWide} = props;
 
   const handleProfileMenuOpen = event => {
     setAnchorEl(event.currentTarget);
@@ -64,6 +81,8 @@ export default function NavigationUpBar(props) {
   function activeRoute(routeName) {
     return window.location.href.indexOf(routeName) > -1 ? true : false;
   }
+
+
 
   var links = (
     <List className={classes.list}>
@@ -89,7 +108,6 @@ export default function NavigationUpBar(props) {
             <ListItemIcon> <prop.icon alt={prop.name+' icon'} className={classes.itemIcon}/>  </ListItemIcon>
               <ListItemText
                 primary={prop.name}
-                className={classNames(classes.itemText, whiteFontClasses)}
                 disableTypography={true}
               />
             </ListItem>
@@ -124,42 +142,8 @@ export default function NavigationUpBar(props) {
             <MenuIcon />
           </IconButton>
 
+            {switchRoutes(classes,handleProfileMenuOpen)}
 
-          <div className={classes.search}>
-             <div className={classes.searchIcon}>
-                <SearchIcon />
-            </div>
-              <InputBase
-              placeholder="Search..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </div>
-          <div className={classes.grow} />
-          <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <MailIcon />
-              </Badge>
-            </IconButton>
-            <IconButton aria-label="show 17 new notifications" color="inherit">
-              <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              edge="end"
-              aria-label="account of current user"
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
           <div className={classes.sectionMobile}>
             <IconButton
               aria-label="show more"
