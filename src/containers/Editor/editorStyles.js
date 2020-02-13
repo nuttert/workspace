@@ -123,7 +123,7 @@ const style = theme => ({
         }
     },
     rootSpeedDeal: {
-    
+      zIndex:1,
       display:"block",
      position: 'absolute',  },
    speedDial: {
